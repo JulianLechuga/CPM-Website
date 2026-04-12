@@ -1,0 +1,38 @@
+section.historia-extra {
+    background-color: #fcfbf7;
+    border: 2px solid #8b5e3c;
+    padding: 1em;
+    margin: 1.5em 0;
+}
+
+section.historia-extra p {
+    color: #4a4036;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+section.historia-extra > p {
+    background-color: #efe6d6;
+    padding: 0.5em;
+    border-left: 4px solid #2f5d62;
+}
+
+section.historia-extra h2 + p {
+    font-weight: bold;
+    color: #1f3c4d;
+}
+
+section.historia-extra h2 ~ p {
+    line-height: 1.7;
+}
+
+section.historia-extra article p {
+    font-style: italic;
+    color: #8b5e3c;
+}
+
+section.historia-extra > article {
+    background-color: #fffaf2;
+    border: 1px solid #b8b0a5;
+    padding: 0.8em;
+    margin-top: 1em;
+}

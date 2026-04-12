@@ -1,0 +1,370 @@
+/* ReqC1 */
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    background-color: #f4f1ea;
+    color: #222222;
+    margin: 0;
+    /* Para el margin y padding se puede configurar como:
+    1 valor - arriba, abajo, izq, derecha
+    2 valores - (arriba, abajo) , (izq, derecha)
+    3 valores - arriba, (izq, derecha), abajo
+    4 valores - en sentidos de agujas del reloj - arriba, derecha, abajo, izq
+    */
+    line-height: 1.5;
+}
+
+/* ReqC2 */
+p, li, td, th, label, input, textarea, button {
+    font-size: 1rem;
+}
+
+/* ReqC3 */
+h1 {
+    font-size: 2em;
+    color: #1f3c4d;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #2f5d62;
+}
+
+h3 {
+    font-size: 1.2em;
+    color: #8b5e3c;
+}
+
+/* ReqC4 */
+main {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+header, nav, footer {
+    margin: 0 auto;
+}
+
+header p {
+    text-align: center;
+}
+
+/* ReqC6 */
+header, nav, section, article, footer {
+    background-color: #ffffff;
+    border: 1px solid #b8b0a5;
+    margin: 1em 0;
+    padding: 1em;
+}
+
+/* ReqC8 */
+.destacado {
+    background-color: #efe6d6;
+    border: 1px solid #8b5e3c;
+    padding: 0.8em;
+}
+
+.btn {
+    background-color: #2f5d62;
+    color: white;
+    border: 1px solid #1f3c4d;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+
+/* ReqC9 */
+#principal {
+    background-color: #fcfbf7;
+    border: 2px solid #2f5d62;
+    padding: 1em;
+}
+
+/* ReqC10 */
+nav > ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+nav > ul > li {
+    display: inline-block;
+    margin-right: 0.8em;
+    margin-bottom: 0.5em;
+}
+
+/* ReqC11 */
+nav a {
+    color: #1f3c4d;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.4em 0.8em;
+    border: 1px solid #2f5d62;
+    background-color: #e8f0f1;
+}
+
+nav a.activo {
+    color: white;
+    background-color: #2f5d62;
+    border-color: #1f3c4d;
+}
+
+/* ReqC12 */
+h2 + p {
+    margin-top: 0.3em;
+}
+
+/* ReqC14 */
+nav a:hover,
+nav a:focus {
+    color: white;
+    background-color: #2f5d62;
+}
+
+/* ReqC16 */
+ul {
+    list-style-type: square;
+}
+
+ol {
+    list-style-type: decimal-leading-zero;
+}
+
+/* ReqC17 */
+caption {
+    caption-side: top;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+/* ReqC18 */
+th {
+    background-color: #2f5d62;
+    color: white;
+    border: 1px solid #999999;
+    padding: 0.5em;
+}
+
+td {
+    background-color: #f9f9f9;
+    border: 1px solid #999999;
+    padding: 0.5em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* ReqC19 */
+input, textarea {
+    font-family: inherit;
+    font-size: 1em;
+    border: 1px solid #999999;
+    padding: 0.5em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    background-color: #eef6f7;
+    border: 1px solid #2f5d62;
+}
+
+input:required, textarea:required {
+    background-color: #fffdf0;
+}
+
+/* ReqC20 */
+button[type="submit"],
+button[type="reset"] {
+    font-family: inherit;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border: 1px solid #1f3c4d;
+    color: white;
+}
+
+button[type="submit"] {
+    background-color: #2f5d62;
+}
+
+button[type="reset"] {
+    background-color: #8b5e3c;
+}
+
+/* ReqC23 */
+figure, table, form {
+    background-color: #ffffff;
+}
+
+/* ReqC24 */
+header, nav, section, article, footer, figure, table, form {
+    margin-bottom: 1em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #999999;
+    padding: 0.3em;
+    background-color: white;
+}
+
+nav button {
+    padding: 0.3em 0.6em;
+    border: 1px solid #2f5d62;
+    background-color: #e8f0f1;
+    cursor: pointer;
+}
+
+/* Reloj */
+#reloj {
+    margin-left: 0.5em;
+    font-weight: bold;
+    color: #2f5d62;
+}
+
+/* 🌙 Modo oscuro */
+.oscuro {
+    background-color: #222;
+    color: #ffffff;
+}
+
+.oscuro header,
+.oscuro nav,
+.oscuro section,
+.oscuro article,
+.oscuro footer {
+    background-color: #333;
+    border-color: #666;
+}
+
+figcaption {
+    text-align: center;
+    margin-top: 0.5em;
+    font-size: 0.9em;
+    color: #555;
+}
+
+figure img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ReqJ3 */
+input.valid,
+textarea.valid,
+select.valid {
+    border: 1px solid green;
+    box-shadow: 0 0 3px rgba(0, 128, 0, 0.2);
+}
+
+/* ReqJ3 */
+input.invalid,
+textarea.invalid,
+select.invalid {
+    border: 1px solid crimson;
+    box-shadow: 0 0 3px rgba(220, 20, 60, 0.2);
+}
+
+/* ReqJ5 */
+.error-box {
+    display: none;
+    color: #8b0000;
+    background-color: #fce4e4;
+    border: 1px solid #f5c2c7;
+    border-radius: 0.4em;
+    padding: 0.7em 1em;
+    margin-bottom: 1em;
+}
+
+/* ReqJ5 */
+.error-box.visible {
+    display: block;
+}
+
+/* ReqJ7 ReqJ8 */
+.highlight {
+    background-color: #f0f8ff;
+}
+
+/* ReqJ7 */
+button.highlight,
+.btn.highlight {
+    background-color: #005fcc;
+    color: #ffffff;
+    border: 1px solid #003f8a;
+    font-weight: bold;
+}
+
+/* ReqJ2 */
+#preview-content {
+    background-color: #fffaf2;
+    border: 1px solid #b8b0a5;
+    padding: 1em;
+}
+
+.language-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.language-box select {
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+}
+
+:lang(es) .language-box label {
+    font-style: italic;
+}
+
+:lang(en) .language-box label {
+    text-decoration: underline;
+}
+
+.language-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.language-item label {
+    font-weight: normal;
+}
+
+.language-item select {
+    width: auto;
+    padding: 0.2em 0.4em;
+    font-size: 0.95rem;
+}
+
+/* ReqC21 */
+@media (max-width: 700px) {
+    main {
+        width: 95vw;
+    }
+
+    header, nav, footer {
+        width: 95vw;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    nav > ul > li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 0.5em;
+    }
+}
+

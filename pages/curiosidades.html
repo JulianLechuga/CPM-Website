@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es-ES">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Julian Lechuga" />
+    <meta
+      name="description"
+      content="Curiosidades sobre la historia de la computación"
+    />
+    <meta
+      name="keywords"
+      content="computación, historia, apple i, curiosidades, informática"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curiosidades | Historia de los Computadores</title>
+
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/combinadores.css" />
+
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/i18n.js" defer></script>
+  </head>
+
+  <body
+    onload="
+      InitNav();
+      initializeI18n();
+    "
+  >
+    <header>
+      <!--ReqH5-->
+      <h1 data-i18n="site.title">Historia de los Computadores</h1>
+      <h2 data-i18n="curiosities.pageTitle">Curiosidades</h2>
+
+      <nav>
+        <h3 data-i18n="nav.menu">Menú de navegación</h3>
+        <ul id="menuNav"></ul>
+      </nav>
+
+      <div class="language-box">
+        <label for="language-switcher" data-i18n="common.languageLabel"
+          >Idioma</label
+        >
+        <select id="language-switcher" onchange="setLocale(this.value)">
+          <option value="es" data-i18n="common.languageSpanish">Español</option>
+          <option value="en" data-i18n="common.languageEnglish">English</option>
+        </select>
+      </div>
+    </header>
+
+    <main id="principal">
+      <section class="historia-extra" id="curiosidades">
+        <h2 data-i18n="curiosities.mainTitle">
+          Curiosidades de la historia de la computación
+        </h2>
+
+        <p data-i18n="curiosities.intro1">
+          La historia de los computadores no comenzó con pantallas ni ratones,
+          sino con máquinas mecánicas, tarjetas perforadas y sistemas ideados
+          para automatizar cálculos.
+        </p>
+
+        <p data-i18n="curiosities.intro2">
+          Muchos avances que hoy parecen básicos fueron auténticas revoluciones
+          técnicas en su época y marcaron la transición desde dispositivos
+          mecánicos a sistemas digitales.
+        </p>
+
+        <article>
+          <h3 data-i18n="curiosities.appleTitle">El Apple I</h3>
+          <p data-i18n="curiosities.appleText1">
+            El <strong>Apple I</strong> fue uno de los primeros computadores
+            personales comercializados y representa un momento clave en la
+            historia de la informática.
+          </p>
+          <p data-i18n="curiosities.appleText2">
+            Su importancia no radica solo en sus prestaciones, sino en haber
+            acercado la computación a usuarios fuera de los grandes entornos
+            empresariales o universitarios.
+          </p>
+        </article>
+
+        <article>
+          <h3 data-i18n="curiosities.babbageTitle">
+            La visión de Charles Babbage
+          </h3>
+          <p data-i18n="curiosities.babbageText1">
+            Charles Babbage propuso ideas pioneras que influyeron en el
+            desarrollo posterior de los computadores, especialmente en el diseño
+            de máquinas programables.
+          </p>
+          <p data-i18n="curiosities.babbageText2">
+            Aunque su tecnología pertenecía a otro contexto histórico, muchos de
+            sus conceptos siguen siendo reconocibles hoy en día.
+          </p>
+        </article>
+
+        <aside class="destacado">
+          <h3 data-i18n="curiosities.factTitle">Dato destacado</h3>
+          <p data-i18n="curiosities.factText">
+            No sabía que poner en esta sección pero asi puedo usar los
+            combinadores de CSS y mostrar algo diferente.
+          </p>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <p data-i18n="footer.author">Autor: Julian Lechuga</p>
+      <p data-i18n="footer.rights">
+        &copy; 2026 - Sitio web para CPM sobre la historia de los computadores
+      </p>
+    </footer>
+  </body>
+</html>

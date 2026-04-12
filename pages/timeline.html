@@ -1,0 +1,330 @@
+<!--ReqH1-->
+<!doctype html>
+<html lang="es-ES">
+  <head>
+    <!--ReqH2-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Julian Lechuga" />
+    <meta
+      name="description"
+      content="Línea de tiempo sobre la historia de los computadores."
+    />
+    <meta
+      name="keywords"
+      content="historia, computadores, línea de tiempo, generaciones, informática, HTML5"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/timeline.css" />
+
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/i18n.js" defer></script>
+
+    <title>Línea de tiempo | Historia de los Computadores</title>
+  </head>
+
+  <body
+    onload="
+      InitNav();
+      initializeI18n();
+    "
+  >
+    <!--ReqH3-->
+    <header>
+      <!--ReqH5-->
+      <h1 data-i18n="site.title">Historia de los Computadores</h1>
+      <h2 data-i18n="timeline.pageTitle">Línea de tiempo</h2>
+
+      <!--ReqH8-->
+      <nav>
+        <h3 data-i18n="nav.menu">Menú de navegación</h3>
+        <ul id="menuNav"></ul>
+      </nav>
+
+      <div class="language-box">
+        <label for="language-switcher" data-i18n="common.languageLabel"
+          >Idioma</label
+        >
+        <select id="language-switcher" onchange="setLocale(this.value)">
+          <option value="es" data-i18n="common.languageSpanish">Español</option>
+          <option value="en" data-i18n="common.languageEnglish">English</option>
+        </select>
+      </div>
+    </header>
+
+    <!--ReqH3-->
+    <main id="principal">
+      <!--ReqH4-->
+      <section>
+        <h2 data-i18n="timeline.summaryTitle">Resumen histórico</h2>
+        <p data-i18n="timeline.summaryText1">
+          La evolución de los computadores fue pasando por distintas etapas.
+          Cada una incorporó avances que hicieron las máquinas más
+          <strong>rápidas</strong>, más <em>pequeñas</em>
+          y más útiles para la vida cotidiana.
+        </p>
+
+        <p data-i18n="timeline.summaryText2">
+          En informática, una <dfn>generación de computadores</dfn> es una etapa
+          histórica marcada por una tecnología dominante, como válvulas,
+          transistores o microprocesadores.
+        </p>
+      </section>
+
+      <!--ReqH4-->
+      <article>
+        <h2 data-i18n="timeline.stagesTitle">Etapas principales</h2>
+
+        <!--ReqH13-->
+        <ol>
+          <li data-i18n="timeline.stageMechanical">
+            <strong>Máquinas mecánicas</strong>
+            <ul>
+              <li>Ábaco</li>
+              <li>Pascalina</li>
+              <li>Máquina analítica de Babbage</li>
+            </ul>
+          </li>
+          <li data-i18n="timeline.stageFirst">
+            Primera generación: válvulas de vacío
+          </li>
+          <li data-i18n="timeline.stageSecond">
+            Segunda generación: transistores
+          </li>
+          <li data-i18n="timeline.stageThird">
+            Tercera generación: circuitos integrados
+          </li>
+          <li data-i18n="timeline.stageFourth">
+            Cuarta generación: microprocesadores
+          </li>
+          <li data-i18n="timeline.stageCurrent">
+            Actualidad: computación móvil, nube e inteligencia artificial
+          </li>
+        </ol>
+      </article>
+
+      <!--ReqH4-->
+      <section>
+        <h2 data-i18n="timeline.evolutionTitle">Etapas y evolución</h2>
+
+        <div>
+          <h3 data-i18n="timeline.mechanicalTitle">Máquinas mecánicas</h3>
+          <p data-i18n="timeline.mechanicalText1">
+            Antes de la computación electrónica, existieron inventos que
+            ayudaban a resolver cálculos de manera manual o semiautomática.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
+            esse autem dolore, molestias perferendis rem dicta unde et. Beatae,
+            temporibus. Illo illum sit temporibus sunt, repellat assumenda
+            nulla, dolore ipsum natus blanditiis necessitatibus nobis aut
+            explicabo aperiam quia corrupti voluptates laboriosam minus
+            quibusdam accusantium cumque quam hic quod aliquam! Temporibus
+            eveniet amet debitis, provident omnis adipisci autem maiores id?
+            Harum.
+          </p>
+        </div>
+
+        <div>
+          <h3 data-i18n="timeline.firstTitle">Primera generación</h3>
+          <p data-i18n="timeline.firstText1">
+            Se caracterizó por el uso de válvulas de vacío. Eran equipos
+            grandes, costosos y consumían mucha energía.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
+            esse autem dolore, molestias perferendis rem dicta unde et. Beatae,
+            temporibus. Illo illum sit temporibus sunt, repellat assumenda
+            nulla, dolore ipsum natus blanditiis necessitatibus nobis aut
+            explicabo aperiam quia corrupti voluptates laboriosam minus
+            quibusdam accusantium cumque quam hic quod aliquam! Temporibus
+            eveniet amet debitis, provident omnis adipisci autem maiores id?
+            Harum.
+          </p>
+        </div>
+
+        <div>
+          <h3 data-i18n="timeline.secondTitle">Segunda generación</h3>
+          <p data-i18n="timeline.secondText1">
+            Los transistores reemplazaron a las válvulas y permitieron máquinas
+            más eficientes.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
+            esse autem dolore, molestias perferendis rem dicta unde et. Beatae,
+            temporibus. Illo illum sit temporibus sunt, repellat assumenda
+            nulla, dolore ipsum natus blanditiis necessitatibus nobis aut
+            explicabo aperiam quia corrupti voluptates laboriosam minus
+            quibusdam accusantium cumque quam hic quod aliquam! Temporibus
+            eveniet amet debitis, provident omnis adipisci autem maiores id?
+            Harum.
+          </p>
+        </div>
+
+        <div>
+          <h3 data-i18n="timeline.fourthTitle">Cuarta generación</h3>
+          <p data-i18n="timeline.fourthText1">
+            El uso del microprocesador permitió el desarrollo de la computadora
+            personal. Un ejemplo simple de instrucción que una computadora puede
+            ejecutar es
+            <code>print("Hola mundo")</code>.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
+            esse autem dolore, molestias perferendis rem dicta unde et. Beatae,
+            temporibus. Illo illum sit temporibus sunt, repellat assumenda
+            nulla, dolore ipsum natus blanditiis necessitatibus nobis aut
+            explicabo aperiam quia corrupti voluptates laboriosam minus
+            quibusdam accusantium cumque quam hic quod aliquam! Temporibus
+            eveniet amet debitis, provident omnis adipisci autem maiores id?
+            Harum.
+          </p>
+        </div>
+
+        <p data-i18n="timeline.extradataText">
+          Una referencia muy conocida en la historia temprana de la computación
+          es
+          <cite>la máquina analítica de Charles Babbage</cite>.
+        </p>
+      </section>
+
+      <!--ReqH14-->
+      <section>
+        <h2 data-i18n="timeline.tableTitle">Tabla de generaciones</h2>
+
+        <table>
+          <caption data-i18n="timeline.tableCaption">
+            Generaciones de los computadores y sus características
+          </caption>
+          <thead>
+            <tr>
+              <th data-i18n="timeline.period">Período</th>
+              <th data-i18n="timeline.tech">Tecnología principal</th>
+              <th colspan="2" data-i18n="timeline.featuresExample">
+                Características y ejemplo
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2">1940 - 1956</td>
+              <td rowspan="2" data-i18n="timeline.techVacuum">
+                Válvulas de vacío
+              </td>
+              <td data-i18n="timeline.rowFeatures">Características</td>
+              <td data-i18n="timeline.rowVacuumFeatures">
+                Equipos grandes, mucho calor y alto consumo eléctrico
+              </td>
+            </tr>
+            <tr>
+              <td data-i18n="timeline.rowExample">Ejemplo</td>
+              <td>ENIAC</td>
+            </tr>
+
+            <tr>
+              <td rowspan="2">1956 - 1964</td>
+              <td rowspan="2" data-i18n="timeline.techTransistors">
+                Transistores
+              </td>
+              <td data-i18n="timeline.rowFeatures">Características</td>
+              <td data-i18n="timeline.rowTransistorFeatures">
+                Mayor velocidad, menor tamaño y mejor confiabilidad
+              </td>
+            </tr>
+            <tr>
+              <td data-i18n="timeline.rowExample">Ejemplo</td>
+              <td>IBM 1401</td>
+            </tr>
+
+            <tr>
+              <td rowspan="2">1964 - 1971</td>
+              <td rowspan="2" data-i18n="timeline.techIC">
+                Circuitos integrados
+              </td>
+              <td data-i18n="timeline.rowFeatures">Características</td>
+              <td data-i18n="timeline.rowICFeatures">
+                Mayor capacidad de procesamiento y reducción de costos
+              </td>
+            </tr>
+            <tr>
+              <td data-i18n="timeline.rowExample">Ejemplo</td>
+              <td>IBM System/360</td>
+            </tr>
+
+            <tr>
+              <td rowspan="2">1971 - actualidad</td>
+              <td rowspan="2" data-i18n="timeline.techMicro">
+                Microprocesadores
+              </td>
+              <td data-i18n="timeline.rowFeatures">Características</td>
+              <td data-i18n="timeline.rowMicroFeatures">
+                Popularización de las computadoras personales y dispositivos
+                móviles
+              </td>
+            </tr>
+            <tr>
+              <td data-i18n="timeline.rowExample">Ejemplo</td>
+              <td data-i18n="timeline.rowMicroExample">
+                PC, laptops y smartphones
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!--ReqH12-->
+      <section>
+        <h2 data-i18n="timeline.resourceTitle">Recurso destacado</h2>
+        <p data-i18n="timeline.resourceText">
+          Para enviarme tu opinión sobre este, o algún otro tema, visita la
+          página de
+          <a href="contact.html" target="_self">contacto</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2 data-i18n="timeline.extraTitle">Ya no se que más poner aquí</h2>
+
+        <figure>
+          <img
+            src="../resources/img/lorem.jpg"
+            alt="Imagen totalmente relacionada y muy acorde al tema de Lorem"
+            width="300"
+          />
+          <figcaption data-i18n="timeline.extraCaption">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ea ab
+            provident, optio accusamus iusto facilis, numquam, beatae doloremque
+            velit delectus voluptate. Tenetur, minus quam.
+          </figcaption>
+        </figure>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto, iste
+          recusandae. Pariatur eaque dolores unde illum ipsam fugiat, dicta
+          totam magnam dolor expedita et nihil eius veritatis, alias ullam
+          nesciunt possimus culpa ducimus consequatur exercitationem perferendis
+          autem iure! Hic, porro. Excepturi dolore magni sunt quidem mollitia,
+          numquam, tenetur, deserunt libero aperiam distinctio quae veniam
+          adipisci assumenda in. Dolorum praesentium eius doloremque repellat
+          quae porro iusto dignissimos velit? Esse maiores recusandae minus
+          possimus delectus vel provident nesciunt eligendi, corrupti saepe
+          aliquam dolores, quos temporibus architecto, est in. Aspernatur sed
+          molestias similique, alias laboriosam eaque nostrum aliquid vel sunt
+          facere beatae id ea consequuntur voluptatem quo quasi saepe fugiat et
+          voluptas voluptate. Ipsam sequi officia mollitia nemo qui, quam ex
+          necessitatibus placeat. Rem commodi in possimus modi porro minima
+          repellendus, laboriosam architecto quasi quidem nisi necessitatibus
+          perspiciatis laborum, a quam voluptatibus dolore esse nihil sapiente,
+          dignissimos aspernatur. Officiis fugit quos accusamus placeat?
+        </p>
+      </section>
+    </main>
+
+    <!--ReqH3-->
+    <footer>
+      <p data-i18n="footer.author">Autor: Julian Lechuga</p>
+      <p data-i18n="footer.rights">
+        &copy; 2026 - Sitio web para CPM sobre la historia de los computadores
+      </p>
+    </footer>
+  </body>
+</html>

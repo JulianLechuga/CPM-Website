@@ -1,0 +1,194 @@
+<!--ReqH1-->
+<!doctype html>
+<html lang="es-ES">
+  <head>
+    <!--ReqH2-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Julian Lechuga" />
+    <meta
+      name="description"
+      content="Sitio web sobre la historia de los computadores."
+    />
+    <meta
+      name="keywords"
+      content="historia, computadores, informática, generaciones, HTML5"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/index.css" />
+
+    <script src="js/nav.js" defer></script>
+    <script src="js/i18n.js" defer></script>
+
+    <title>Historia de los Computadores</title>
+  </head>
+
+  <body
+    onload="
+      InitNav();
+      initializeI18n();
+    "
+  >
+    <!--ReqH3-->
+    <header>
+      <!--ReqH5-->
+      <h1 data-i18n="site.title">Historia de los Computadores</h1>
+
+      <h2 data-i18n="home.pageTitle">Inicio</h2>
+      <!--ReqH8-->
+      <nav>
+        <h3 data-i18n="nav.menu">Menú de navegación</h3>
+        <ul id="menuNav"></ul>
+      </nav>
+
+      <div class="language-box">
+        <label for="language-switcher" data-i18n="common.languageLabel"
+          >Idioma</label
+        >
+        <select id="language-switcher" onchange="setLocale(this.value)">
+          <option value="es" data-i18n="common.languageSpanish">Español</option>
+          <option value="en" data-i18n="common.languageEnglish">English</option>
+        </select>
+      </div>
+    </header>
+
+    <!--ReqH3-->
+    <main id="principal">
+      <!--ReqH4-->
+      <section>
+        <h2 data-i18n="home.welcomeTitle">¿Qué encontrarás en este sitio?</h2>
+        <p data-i18n="home.welcomeText1">
+          Este sitio web presenta un recorrido
+          <strong>simple y claro</strong> por la evolución de los computadores,
+          desde las primeras máquinas de cálculo hasta los equipos actuales.
+        </p>
+        <p data-i18n="home.welcomeText2">
+          <!--Se que no se usa strong pero para tener un poco de todo -->
+          Un <strong>computador</strong> es una máquina capaz de procesar datos
+          y convertirlos en información útil. A lo largo del tiempo, su tamaño,
+          velocidad y utilidad cambiaron de forma impresionante.
+        </p>
+
+        <!--ReqH6-->
+        <p class="destacado" data-i18n="home.highlight">
+          La historia de los computadores es <em>fundamental</em> para
+          comprender cómo surgieron muchas de las tecnologías que usamos hoy.
+        </p>
+      </section>
+
+      <!--ReqH4-->
+      <article>
+        <h2 data-i18n="home.firstComputersTitle">Primeros computadores</h2>
+        <p data-i18n="home.firstComputersText">
+          Antes de los computadores electrónicos existieron dispositivos como el
+          ábaco y máquinas mecánicas de cálculo. Más adelante aparecieron ideas
+          importantes como la máquina analítica de Charles Babbage.
+        </p>
+
+        <!--ReqH7-->
+        <p data-i18n="home.referenceText">
+          Una de las referencias más conocidas en esta historia es
+          <cite>la máquina analítica</cite>.
+        </p>
+
+        <!--ReqH7-->
+        <p data-i18n="home.codeText">
+          En programación, una instrucción como
+          <code>print("Hola mundo")</code> muestra cómo una computadora puede
+          ejecutar órdenes de forma precisa.
+        </p>
+      </article>
+
+      <!--ReqH12-->
+      <section>
+        <h2 data-i18n="home.imageTitle">Imagen representativa</h2>
+        <figure>
+          <!--ReqH10-->
+          <a href="timeline.html">
+            <img
+              src="./resources/img/computador1.png"
+              alt="Imagen de un computador antiguo"
+              height="200"
+            />
+          </a>
+          <figcaption data-i18n="home.imageCaption">Apple I</figcaption>
+        </figure>
+      </section>
+
+      <!--ReqH14-->
+      <!--ReqH14-->
+      <section>
+        <h2 data-i18n="home.topicsTitle">Temas principales</h2>
+
+        <p data-i18n="home.topicsIntro">
+          A lo largo de la historia, los computadores han evolucionado desde
+          herramientas simples de cálculo hasta dispositivos complejos que
+          usamos diariamente. A continuación se presentan los principales temas
+          que se abordan en este sitio:
+        </p>
+
+        <ul>
+          <li data-i18n="home.topic1">
+            <strong>Máquinas de cálculo antiguas:</strong> dispositivos como el
+            ábaco o la Pascalina que permitían realizar operaciones básicas.
+          </li>
+          <li data-i18n="home.topic2">
+            <strong>Primera generación de computadores:</strong> uso de válvulas
+            de vacío en máquinas grandes y poco eficientes.
+          </li>
+          <li data-i18n="home.topic3">
+            <strong>Segunda generación:</strong> incorporación de transistores,
+            reduciendo tamaño y consumo de energía.
+          </li>
+          <li data-i18n="home.topic4">
+            <strong>Tercera generación:</strong> aparición de circuitos
+            integrados que aumentaron la velocidad y capacidad.
+          </li>
+          <li data-i18n="home.topic5">
+            <strong>Computadores modernos:</strong> uso de microprocesadores,
+            dispositivos personales y tecnologías actuales.
+          </li>
+        </ul>
+
+        <h3 data-i18n="home.advancesTitle">Ejemplos de avances tecnológicos</h3>
+
+        <p data-i18n="home.advancesIntro">
+          Cada generación de computadores se caracteriza por un avance
+          tecnológico clave que permitió mejorar su funcionamiento:
+        </p>
+
+        <ol>
+          <li data-i18n="home.advance1">
+            <strong>Uso de válvulas de vacío:</strong> primeras tecnologías
+            electrónicas, aunque poco eficientes.
+          </li>
+          <li data-i18n="home.advance2">
+            <strong>Uso de transistores:</strong> permitieron equipos más
+            pequeños y confiables.
+          </li>
+          <li data-i18n="home.advance3">
+            <strong>Uso de circuitos integrados:</strong> múltiples componentes
+            en un solo chip.
+          </li>
+          <li data-i18n="home.advance4">
+            <strong>Uso de microprocesadores:</strong> base de los computadores
+            actuales y dispositivos móviles.
+          </li>
+        </ol>
+
+        <p class="destacado" data-i18n="home.bottomHighlight">
+          Estos avances han permitido que los computadores pasen de ocupar salas
+          completas a estar presentes en nuestros bolsillos.
+        </p>
+      </section>
+    </main>
+
+    <!--ReqH3-->
+    <footer>
+      <p data-i18n="footer.author">Autor: Julian Lechuga</p>
+      <p data-i18n="footer.rights">
+        &copy; 2026 - Sitio web para CPM sobre la historia de los computadores
+      </p>
+    </footer>
+  </body>
+</html>

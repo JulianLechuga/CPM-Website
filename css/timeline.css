@@ -1,0 +1,16 @@
+/* ReqS5 */
+main {
+    background-color: #f8f5ee;
+}
+
+/* ReqS7 */
+main p::first-letter {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #8b5e3c;
+}
+
+/* ReqS9 */
+#principal {
+    border-color: #8b5e3c;
+}

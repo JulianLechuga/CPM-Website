@@ -1,0 +1,482 @@
+<!--ReqH1-->
+<!doctype html>
+<html lang="es-ES">
+  <head>
+    <!--ReqH2-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Julian Lechuga" />
+    <meta
+      name="description"
+      content="Formulario de contacto del sitio Historia de los Computadores."
+    />
+    <meta
+      name="keywords"
+      content="contacto, formulario, historia de los computadores, HTML5, JavaScript"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+
+    <!-- ReqJ1 -->
+    <script src="../js/myJS.js" defer></script>
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/i18n.js" defer></script>
+
+    <title>Contacto | Historia de los Computadores</title>
+  </head>
+
+  <body
+    onload="
+      InitNav();
+      InitPage();
+      initializeI18n();
+    "
+  >
+    <!--ReqH3-->
+    <header>
+      <!--ReqH5-->
+      <h1 data-i18n="site.title">Historia de los Computadores</h1>
+      <h2 data-i18n="contact.pageTitle">Contacto</h2>
+
+      <!--ReqH8-->
+      <nav>
+        <h3 data-i18n="nav.menu">Menú de navegación</h3>
+        <ul id="menuNav"></ul>
+      </nav>
+
+      <div class="language-box">
+        <label for="language-switcher" data-i18n="common.languageLabel"
+          >Idioma</label
+        >
+        <select id="language-switcher" onchange="setLocale(this.value)">
+          <option value="es" data-i18n="common.languageSpanish">Español</option>
+          <option value="en" data-i18n="common.languageEnglish">English</option>
+        </select>
+      </div>
+    </header>
+
+    <main>
+      <!--ReqH4-->
+      <section>
+        <h2 data-i18n="contact.formTitle">Formulario de contacto</h2>
+        <p data-i18n="contact.formIntro1">
+          En esta página puedes enviar tu opinión sobre el sitio o compartir qué
+          etapa de la historia de los computadores te parece más
+          <strong>interesante</strong>.
+        </p>
+        <p data-i18n="contact.formIntro2">
+          Este <dfn>formulario web</dfn> te permitirá introducir datos para ser
+          enviados o procesados por los administradores.
+        </p>
+      </section>
+
+      <!--ReqH15-->
+      <section>
+        <h2 data-i18n="contact.sendTitle">Envío de mensaje</h2>
+        <!-- ReqJ4 ReqJ7 -->
+        <form
+          id="formularioContacto"
+          name="formularioContacto"
+          action="mailto:UO308948@uniovi.es?subject=Consulta%20sobre%20Historia%20de%20los%20Computadores"
+          method="post"
+          novalidate
+          onsubmit="return validateForm();"
+          onkeydown="handleKeydown(event)"
+        >
+          <!-- ReqJ5 -->
+          <div id="error-box" class="error-box" aria-live="polite"></div>
+
+          <!-- ReqH16 ReqJ2 ReqJ3 ReqJ8 -->
+          <p>
+            <label for="nombre" data-i18n="contact.name"
+              >Nombre completo:</label
+            >
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              required
+              oninput="
+                updatePreview();
+                checkValidityState(this);
+              "
+              onmouseover="handleMouseOver(this)"
+              onmouseout="handleMouseOut(this)"
+            />
+          </p>
+
+          <!-- ReqH16 ReqJ2 ReqJ3 ReqJ8 -->
+          <p>
+            <label for="correo" data-i18n="contact.email"
+              >Correo electrónico:</label
+            >
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              required
+              oninput="
+                updatePreview();
+                checkValidityState(this);
+              "
+              onmouseover="handleMouseOver(this)"
+              onmouseout="handleMouseOut(this)"
+            />
+          </p>
+
+          <!-- ReqH16 ReqJ3 ReqJ8 -->
+          <p>
+            <label for="clave" data-i18n="contact.password">Contraseña:</label>
+            <input
+              type="password"
+              id="clave"
+              name="clave"
+              required
+              minlength="6"
+              oninput="checkValidityState(this)"
+              onmouseover="handleMouseOver(this)"
+              onmouseout="handleMouseOut(this)"
+            />
+          </p>
+
+          <!-- ReqH16 ReqH17 ReqJ2 ReqJ3 ReqJ8 -->
+          <p>
+            <label for="telefono" data-i18n="contact.phone">Teléfono:</label>
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              pattern="[0-9]{9}"
+              placeholder="Ejemplo: 612345678"
+              required
+              oninput="
+                updatePreview();
+                checkValidityState(this);
+              "
+              onmouseover="handleMouseOver(this)"
+              onmouseout="handleMouseOut(this)"
+            />
+          </p>
+
+          <!-- ReqJ2 ReqJ3 -->
+          <p>
+            <label for="fechaNacimiento" data-i18n="contact.birthdate"
+              >Fecha de nacimiento:</label
+            >
+            <input
+              type="date"
+              id="fechaNacimiento"
+              name="fechaNacimiento"
+              onchange="
+                CheckLegalAge();
+                updatePreview();
+                checkValidityState(this);
+              "
+              onmouseover="handleMouseOver(this)"
+              onmouseout="handleMouseOut(this)"
+            />
+          </p>
+
+          <!-- ReqJ2 ReqJ3 -->
+          <p id="lineaID">
+            <label for="identificador" data-i18n="contact.id">ID:</label>
+            <input
+              type="text"
+              id="identificador"
+              name="identificador"
+              maxlength="9"
+              placeholder="Ejemplo: 12345678A"
+              oninput="
+                CheckID();
+                updatePreview();
+              "
+              onmouseover="handleMouseOver(this)"
+              onmouseout="handleMouseOut(this)"
+            />
+          </p>
+
+          <!-- ReqJ2 -->
+          <p>
+            <span data-i18n="contact.profile">Perfil:</span>
+            <input
+              type="radio"
+              id="estudiante"
+              name="perfil"
+              value="estudiante"
+              onchange="updatePreview()"
+            />
+            <label
+              for="estudiante"
+              onclick="SelectStudent()"
+              data-i18n="contact.student"
+              >Estudiante</label
+            >
+
+            <input
+              type="radio"
+              id="profesor"
+              name="perfil"
+              value="profesor"
+              onchange="updatePreview()"
+            />
+            <label
+              for="profesor"
+              onclick="SelectTeacher()"
+              data-i18n="contact.teacher"
+              >Profesor</label
+            >
+          </p>
+
+          <!-- ReqJ2 ReqJ3 ReqJ5 -->
+          <p>
+            <label for="comoConocio" data-i18n="contact.howKnown"
+              >¿Cómo conociste el sitio?</label
+            >
+            <select
+              id="comoConocio"
+              name="comoConocio"
+              required
+              onchange="
+                updatePreview();
+                checkValidityState(this);
+              "
+              onmouseover="handleMouseOver(this)"
+              onmouseout="handleMouseOut(this)"
+            >
+              <option value="" data-i18n="contact.selectOption">
+                Selecciona una opción
+              </option>
+              <option value="clase" data-i18n="contact.knownClass">
+                En clase
+              </option>
+              <option value="internet" data-i18n="contact.knownInternet">
+                Buscando en internet
+              </option>
+              <option value="amigo" data-i18n="contact.knownFriend">
+                Por un amigo o conocido
+              </option>
+            </select>
+          </p>
+
+          <!-- ReqJ2 -->
+          <p>
+            <label for="numeroFavorito" data-i18n="contact.number"
+              >Selecciona un número:</label
+            >
+            <select
+              id="numeroFavorito"
+              name="numeroFavorito"
+              onchange="
+                writeNumber();
+                updatePreview();
+                checkValidityState(this);
+              "
+            >
+              <option value="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+            </select>
+          </p>
+
+          <p id="numeroElegido" data-i18n="contact.selectedNumber">
+            Número seleccionado: 100
+          </p>
+
+          <!-- ReqJ2 -->
+          <p>
+            <label for="colorFavorito" data-i18n="contact.color"
+              >Selecciona un color:</label
+            >
+            <select
+              id="colorFavorito"
+              name="colorFavorito"
+              onchange="
+                writeColor();
+                updatePreview();
+                checkValidityState(this);
+              "
+            >
+              <option value="red" data-i18n="contact.red">Rojo</option>
+              <option value="green" data-i18n="contact.green">Verde</option>
+              <option value="blue" data-i18n="contact.blue">Azul</option>
+              <option value="white" data-i18n="contact.white">Blanco</option>
+              <option value="grey" data-i18n="contact.grey">Gris</option>
+              <option value="black" data-i18n="contact.black">Negro</option>
+            </select>
+          </p>
+
+          <p id="colorHexa" data-i18n="contact.selectedColor">
+            Color hexadecimal: #FF0000
+          </p>
+
+          <!-- ReqJ2 -->
+          <p>
+            <span data-i18n="contact.interests">Intereses:</span>
+            <input
+              type="checkbox"
+              id="hardware"
+              name="intereses"
+              value="hardware"
+              onchange="updatePreview()"
+            />
+            <label for="hardware" data-i18n="contact.hardware">Hardware</label>
+
+            <input
+              type="checkbox"
+              id="software"
+              name="intereses"
+              value="software"
+              onchange="updatePreview()"
+            />
+            <label for="software" data-i18n="contact.software">Software</label>
+
+            <input
+              type="checkbox"
+              id="historia"
+              name="intereses"
+              value="historia"
+              onchange="updatePreview()"
+            />
+            <label for="historia" data-i18n="contact.history">Historia</label>
+          </p>
+
+          <!-- ReqH16 ReqJ2 ReqJ3 ReqJ8 -->
+          <p>
+            <label for="temaFavorito" data-i18n="contact.topic"
+              >Tema favorito:</label
+            >
+            <input
+              type="text"
+              id="temaFavorito"
+              name="temaFavorito"
+              oninput="
+                updatePreview();
+                checkValidityState(this);
+              "
+              onmouseover="handleMouseOver(this)"
+              onmouseout="handleMouseOut(this)"
+            />
+          </p>
+
+          <!-- ReqH16 ReqJ2 ReqJ3 ReqJ6 ReqJ8 -->
+          <p>
+            <label for="mensaje" data-i18n="contact.message">Mensaje:</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="6"
+              cols="40"
+              required
+              oninput="
+                contarCaracteres();
+                updatePreview();
+                checkValidityState(this);
+              "
+              onmouseover="handleMouseOver(this)"
+              onmouseout="handleMouseOut(this)"
+            ></textarea>
+          </p>
+
+          <p id="contador" data-i18n="contact.counter">Caracteres: 0</p>
+
+          <!-- ReqH18 ReqJ7 -->
+          <p>
+            <button
+              type="submit"
+              class="btn"
+              id="submit-btn"
+              data-i18n="contact.submit"
+            >
+              Enviar
+            </button>
+            <button
+              type="reset"
+              class="btn"
+              onclick="ResetVisualState()"
+              data-i18n="contact.reset"
+            >
+              Reiniciar
+            </button>
+          </p>
+        </form>
+      </section>
+
+      <!-- ReqJ2 -->
+      <section id="preview">
+        <h2 data-i18n="contact.previewTitle">Vista previa</h2>
+        <div id="preview-content">
+          <p data-i18n="contact.previewPlaceholder">
+            La vista previa del formulario se mostrará aquí.
+          </p>
+        </div>
+      </section>
+
+      <!--ReqH13-->
+      <section>
+        <h2 data-i18n="contact.topicsTitle">
+          Temas sobre los que puedes escribir
+        </h2>
+
+        <p data-i18n="contact.topicsIntro">
+          Este formulario está pensado para que puedas compartir tus ideas,
+          dudas o sugerencias sobre el contenido del sitio. Puedes escribir
+          sobre:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Opinión sobre el sitio web:</strong>
+            Puedes comentar qué te ha parecido el diseño, la organización de la
+            información o la claridad de los contenidos.
+          </li>
+
+          <li>
+            <strong>Dudas sobre la línea de tiempo:</strong>
+            Si alguna etapa de la historia de los computadores no te queda
+            clara, puedes preguntar para obtener más información.
+          </li>
+
+          <li>
+            <strong>Comentarios sobre generaciones de computadores:</strong>
+            Comparte tu opinión sobre las distintas generaciones o menciona cuál
+            te parece más importante en la evolución tecnológica.
+          </li>
+
+          <li>
+            <strong>Sugerencias de mejora:</strong>
+            Puedes proponer nuevas secciones, contenidos adicionales o ideas
+            para mejorar este sitio web.
+          </li>
+        </ul>
+
+        <p class="destacado" data-i18n="contact.topicsHighlight">
+          Tu opinión es importante para seguir mejorando este proyecto
+          educativo.
+        </p>
+      </section>
+
+      <!--ReqH4-->
+      <article>
+        <h2 data-i18n="contact.noteTitle">Nota importante</h2>
+        <p data-i18n="contact.noteText1">
+          El envío mediante el formulario (usando <code>mailto:</code>) abre la
+          aplicación de correo predeterminada del usuario.
+        </p>
+        <p data-i18n="contact.noteText2">
+          También puedes volver a la
+          <a href="timeline.html" target="_self">línea de tiempo</a>
+          para repasar las etapas históricas.
+        </p>
+      </article>
+    </main>
+
+    <!--ReqH3-->
+    <footer>
+      <p data-i18n="footer.author">Autor: Julian Lechuga</p>
+      <p data-i18n="footer.rights">
+        &copy; 2026 - Sitio web para CPM sobre la historia de los computadores
+      </p>
+    </footer>
+  </body>
+</html>
