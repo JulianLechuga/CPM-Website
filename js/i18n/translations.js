@@ -1,3 +1,4 @@
+/* ReqI18N3 */
 const translations = {
   es: {
     "site.title": "Historia de los Computadores",
@@ -61,6 +62,23 @@ const translations = {
 
     "timeline.pageTitle": "Línea de tiempo",
     "timeline.summaryTitle": "Resumen histórico",
+    "timeline.intlTitle": "Datos históricos destacados",
+    "timeline.intlIntro":
+      "La historia de los computadores puede entenderse mejor si observamos algunos datos concretos. En esta sección se muestran ejemplos de información histórica que cambian de formato según el idioma seleccionado, utilizando internacionalización con JavaScript.",
+    "timeline.intlDateExplanation":
+      "Una fecha importante dentro de la evolución de la informática personal es la presentación del Apple I, uno de los primeros computadores personales más representativos de la historia moderna.",
+    "timeline.demoDateLabel": "Fecha destacada:",
+    "timeline.intlNumberExplanation":
+      "También es posible representar cantidades numéricas con distintos formatos regionales. El siguiente valor sirve como ejemplo de número histórico para comprobar cómo cambia su visualización según la configuración del idioma.",
+    "timeline.demoNumberLabel": "Número histórico:",
+    "timeline.intlNumberExplanation":
+      "Otro aspecto clave en la evolución de los computadores es el aumento del número de componentes electrónicos. Por ejemplo, los primeros microprocesadores como el Intel 4004 contenían unos pocos miles de transistores, mientras que los sistemas actuales incluyen millones o incluso miles de millones.",
+    "timeline.intlNumberContext":
+      "El siguiente valor representa un número simbólico que ilustra ese crecimiento tecnológico, mostrando cómo la capacidad de procesamiento ha aumentado enormemente con el paso del tiempo.",
+    "timeline.intlHighlight":
+      "Gracias a la internacionalización, una misma información puede presentarse de forma más clara y natural para usuarios de distintos idiomas y regiones.",
+    "timeline.dynamicIntro":
+      "A continuación se genera automáticamente un pequeño resumen histórico utilizando los datos anteriores. Este contenido cambia según el idioma activo y reutiliza información ya formateada para mostrar un ejemplo práctico de internacionalización dinámica.",
     "timeline.summaryText1":
       "La evolución de los computadores fue pasando por distintas etapas. Cada una incorporó avances que hicieron las máquinas más rápidas, más pequeñas y más útiles para la vida cotidiana.",
     "timeline.summaryText2":
@@ -102,7 +120,8 @@ const translations = {
     "timeline.fourthTitle": "Cuarta generación",
     "timeline.fourthText1":
       'El uso del microprocesador permitió el desarrollo de la computadora personal. Un ejemplo simple de instrucción que una computadora puede ejecutar es print("Hola mundo").',
-    "timeline.extradataText": "Una referencia muy conocida en la historia temprana de la computación es la máquina analítica de Charles Babbage.",
+    "timeline.extradataText":
+      "Una referencia muy conocida en la historia temprana de la computación es la máquina analítica de Charles Babbage.",
     "timeline.tableTitle": "Tabla de generaciones",
     "timeline.tableCaption":
       "Generaciones de los computadores y sus características",
@@ -257,6 +276,23 @@ const translations = {
 
     "timeline.pageTitle": "Timeline",
     "timeline.summaryTitle": "Historical summary",
+    "timeline.intlTitle": "Featured historical data",
+    "timeline.intlIntro":
+      "La historia de los computadores puede entenderse mejor si observamos algunos datos concretos. En esta sección se muestran ejemplos de información histórica que cambian de formato según el idioma seleccionado, utilizando internacionalización con JavaScript.",
+    "timeline.intlDateExplanation":
+      "Una fecha importante dentro de la evolución de la informática personal es la presentación del Apple I, uno de los primeros computadores personales más representativos de la historia moderna.",
+    "timeline.demoDateLabel": "Fecha destacada:",
+    "timeline.intlNumberExplanation":
+      "También es posible representar cantidades numéricas con distintos formatos regionales. El siguiente valor sirve como ejemplo de número histórico para comprobar cómo cambia su visualización según la configuración del idioma.",
+    "timeline.demoNumberLabel": "Número histórico:",
+    "timeline.intlHighlight":
+      "Gracias a la internacionalización, una misma información puede presentarse de forma más clara y natural para usuarios de distintos idiomas y regiones.",
+    "timeline.dynamicIntro":
+      "A continuación se genera automáticamente un pequeño resumen histórico utilizando los datos anteriores. Este contenido cambia según el idioma activo y reutiliza información ya formateada para mostrar un ejemplo práctico de internacionalización dinámica.",
+    "timeline.intlNumberExplanation":
+      "Another key aspect in the evolution of computers is the increase in the number of electronic components. For example, early microprocessors like the Intel 4004 contained only a few thousand transistors, while modern systems include millions or even billions.",
+    "timeline.intlNumberContext":
+      "The following value represents a symbolic number that illustrates this technological growth, showing how processing capacity has increased enormously over time.",
     "timeline.summaryText1":
       "The evolution of computers went through different stages. Each one introduced advances that made machines faster, smaller and more useful in everyday life.",
     "timeline.summaryText2":
@@ -297,7 +333,8 @@ const translations = {
     "timeline.fourthTitle": "Fourth generation",
     "timeline.fourthText1":
       'The use of the microprocessor enabled the development of the personal computer. A simple example of an instruction a computer can execute is print("Hello world").',
-    "timeline.extradataText": "A well-known reference in the early history of computing is Charles Babbage's analytical engine.",      
+    "timeline.extradataText":
+      "A well-known reference in the early history of computing is Charles Babbage's analytical engine.",
     "timeline.tableTitle": "Generations table",
     "timeline.tableCaption": "Computer generations and their characteristics",
     "timeline.period": "Period",
@@ -387,108 +424,3 @@ const translations = {
     "footer.rights": "© 2026 - PMC Website about the history of computers",
   },
 };
-
-function getSavedLocale() {
-  const savedLocale = localStorage.getItem("preferredLanguage");
-  return translations[savedLocale] ? savedLocale : "es";
-}
-
-function applyTranslations(locale) {
-  const elements = document.querySelectorAll("[data-i18n]");
-  for (const element of elements) {
-    const key = element.dataset.i18n;
-    const translatedText = translations[locale]?.[key];
-    if (translatedText) {
-      element.textContent = translatedText;
-    }
-  }
-
-  const placeholderElements = document.querySelectorAll(
-    "[data-i18n-placeholder]",
-  );
-  for (const element of placeholderElements) {
-    const key = element.dataset.i18nPlaceholder;
-    const translatedPlaceholder = translations[locale]?.[key];
-    if (translatedPlaceholder) {
-      element.setAttribute("placeholder", translatedPlaceholder);
-    }
-  }
-
-  document.documentElement.lang = locale;
-}
-
-function getResolvedLocale(locale) {
-  return locale === "en" ? "en-US" : "es-ES";
-}
-
-function formatDate(dateValue, locale) {
-  return new Intl.DateTimeFormat(getResolvedLocale(locale), {
-    dateStyle: "long",
-    timeStyle: "short",
-  }).format(dateValue);
-}
-
-function formatNumber(numberValue, locale) {
-  return new Intl.NumberFormat(getResolvedLocale(locale), {
-    style: "decimal",
-  }).format(numberValue);
-}
-
-function updateDynamicContent(locale) {
-  const reloj = document.getElementById("reloj");
-  if (reloj) {
-    reloj.textContent = new Intl.DateTimeFormat(getResolvedLocale(locale), {
-      timeStyle: "medium",
-    }).format(new Date());
-  }
-
-  const dateBox = document.getElementById("intl-demo-date");
-  if (dateBox) {
-    const rawDate = dateBox.dataset.date;
-    dateBox.textContent = formatDate(new Date(rawDate), locale);
-  }
-
-  const numberBox = document.getElementById("numeroElegido");
-  const numberSelect = document.getElementById("numeroFavorito");
-  if (numberBox && numberSelect) {
-    const label =
-      translations[locale]?.["contact.selectedNumber"] ||
-      "Número seleccionado:";
-    numberBox.textContent =
-      label + " " + formatNumber(Number(numberSelect.value), locale);
-  }
-}
-
-function initializeLanguageSwitcher(locale) {
-  const languageSwitcher = document.querySelector("#language-switcher");
-  if (languageSwitcher) {
-    languageSwitcher.value = locale;
-  }
-}
-
-function setLocale(locale) {
-  const selectedLocale = translations[locale] ? locale : "es";
-  localStorage.setItem("preferredLanguage", selectedLocale);
-  applyTranslations(selectedLocale);
-  updateDynamicContent(selectedLocale);
-  initializeLanguageSwitcher(selectedLocale);
-
-  if (typeof updatePreview === "function") {
-    updatePreview();
-  }
-}
-
-function initializeI18n() {
-  const translatableElements = document.querySelectorAll("[data-i18n]");
-  const languageSwitcher = document.querySelector("#language-switcher");
-
-  if (translatableElements.length === 0 && !languageSwitcher) {
-    console.log("Esta página todavía no está preparada para i18n.");
-    return;
-  }
-
-  const initialLocale = getSavedLocale();
-  applyTranslations(initialLocale);
-  updateDynamicContent(initialLocale);
-  initializeLanguageSwitcher(initialLocale);
-}

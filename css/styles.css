@@ -319,12 +319,24 @@ button.highlight,
     font-size: 1rem;
 }
 
+/* ReqI18N9 */
 :lang(es) .language-box label {
     font-style: italic;
 }
 
 :lang(en) .language-box label {
     text-decoration: underline;
+}
+
+/* ReqI18N9 */
+:lang(es) figcaption {
+    letter-spacing: 0.02em;
+}
+
+/* ReqI18N9 */
+:lang(en) blockquote,
+:lang(en) .destacado {
+    word-spacing: 0.05em;
 }
 
 .language-item {
