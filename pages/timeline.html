@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../css/timeline.css" />
 
     <script src="../js/nav.js" defer></script>
+    <script src="../js/i18n/translations.js" defer></script>
     <script src="../js/i18n/i18n.js" defer></script>
 
     <title>Línea de tiempo | Historia de los Computadores</title>
@@ -73,6 +74,7 @@
       </section>
 
       <!--ReqI18N7-->
+      <!--ReqI18N7-->
       <section>
         <h2 data-i18n="timeline.intlTitle">Datos históricos destacados</h2>
 
@@ -85,8 +87,7 @@
 
         <p data-i18n="timeline.intlDateExplanation">
           Una fecha importante dentro de la evolución de la informática personal
-          <!-- aqui puede ir <b>Apple I</b> tambien  -->
-          es la presentación del <strong>Apple I</strong>, uno de los primeros 
+          es la presentación del <strong>Apple I</strong>, uno de los primeros
           computadores personales más representativos de la historia moderna.
         </p>
 
@@ -95,6 +96,14 @@
           <span data-i18n="timeline.demoDateLabel">Fecha destacada:</span>
           <em id="intl-demo-date" data-date="1976-04-11T10:00:00">
             1976-04-11T10:00:00
+          </em>
+        </p>
+
+        <!--ReqI18N7-->
+        <p>
+          <span data-i18n="timeline.demoShortDateLabel">Fecha corta:</span>
+          <em id="intl-demo-short-date" data-date="1971-11-15T09:30:00">
+            1971-11-15T09:30:00
           </em>
         </p>
 
@@ -107,16 +116,32 @@
         </p>
 
         <p data-i18n="timeline.intlNumberContext">
-          El siguiente valor representa un número simbólico que ilustra ese
-          crecimiento tecnológico, mostrando cómo la capacidad de procesamiento
-          ha aumentado enormemente con el paso del tiempo. Siendo este el número inicial
-          de transistores en el Intel 4004, el primer microprocesador comercializado.
+          El siguiente valor representa el número aproximado de transistores del
+          Intel 4004, considerado uno de los primeros microprocesadores
+          comerciales. Su comparación con la tecnología actual permite entender
+          la enorme evolución de la capacidad de procesamiento.
         </p>
 
         <!--ReqI18N7-->
         <p>
           <span data-i18n="timeline.demoNumberLabel">Número histórico:</span>
           <em id="intl-demo-number" data-number="2300">2300</em>
+        </p>
+
+        <!--ReqI18N7-->
+        <p>
+          <span data-i18n="timeline.demoCurrencyLabel"
+            >Precio histórico aproximado:</span
+          >
+          <em id="intl-demo-currency" data-currency="666.66">666.66</em>
+        </p>
+
+        <!--ReqI18N7-->
+        <p>
+          <span data-i18n="timeline.demoPercentLabel"
+            >Crecimiento simbólico:</span
+          >
+          <em id="intl-demo-percent" data-percent="0.875">0.875</em>
         </p>
 
         <p class="destacado" data-i18n="timeline.intlHighlight">
@@ -126,7 +151,7 @@
         </p>
       </section>
 
-      <!--ReqI18N8-->
+      <!--ReqI18N 8-->
       <section>
         <h2 data-i18n="timeline.dynamicTitle">Resumen dinámico</h2>
 
@@ -347,13 +372,20 @@
       <!--ReqH12-->
       <section>
         <h2 data-i18n="timeline.resourceTitle">Recurso destacado</h2>
-        <p data-i18n="timeline.resourceText">
-          Para enviarme tu opinión sobre este, o algún otro tema, visita la
-          página de
-          <a href="contact.html" target="_self">contacto</a>.
+        <p>
+          <span data-i18n="timeline.resourceTextStart">
+            Para enviarme tu opinión sobre este, o algún otro tema, visita la
+            página de
+          </span>
+          <a
+            href="contact.html"
+            target="_self"
+            data-i18n="timeline.resourceLink"
+            >contacto</a
+          >.
         </p>
       </section>
-
+      
       <section>
         <h2 data-i18n="timeline.extraTitle">Ya no se que más poner aquí</h2>
 

@@ -1,0 +1,55 @@
+form p {
+    margin-bottom: 1em;
+}
+
+form label {
+    display: inline-block;
+    margin-bottom: 0.3em;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"],
+form input[type="date"],
+form select,
+form textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.4em;
+    vertical-align: middle;
+}
+
+form input[type="radio"] + label,
+form input[type="checkbox"] + label {
+    display: inline;
+    margin-right: 1.2em;
+    vertical-align: middle;
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8em 1.2em;
+    margin-top: 0.4em;
+}
+
+.radio-group label,
+.checkbox-group label {
+    margin-right: 0;
+}
+form select {
+    padding: 0.3em;
+}
+
+form button {
+    margin-right: 0.6em;
+    margin-top: 0.5em;
+}

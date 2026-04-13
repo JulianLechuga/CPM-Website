@@ -68,8 +68,6 @@ const translations = {
     "timeline.intlDateExplanation":
       "Una fecha importante dentro de la evolución de la informática personal es la presentación del Apple I, uno de los primeros computadores personales más representativos de la historia moderna.",
     "timeline.demoDateLabel": "Fecha destacada:",
-    "timeline.intlNumberExplanation":
-      "También es posible representar cantidades numéricas con distintos formatos regionales. El siguiente valor sirve como ejemplo de número histórico para comprobar cómo cambia su visualización según la configuración del idioma.",
     "timeline.demoNumberLabel": "Número histórico:",
     "timeline.intlNumberExplanation":
       "Otro aspecto clave en la evolución de los computadores es el aumento del número de componentes electrónicos. Por ejemplo, los primeros microprocesadores como el Intel 4004 contenían unos pocos miles de transistores, mientras que los sistemas actuales incluyen millones o incluso miles de millones.",
@@ -201,6 +199,14 @@ const translations = {
     "contact.topicsTitle": "Temas sobre los que puedes escribir",
     "contact.topicsIntro":
       "Este formulario está pensado para que puedas compartir tus ideas, dudas o sugerencias sobre el contenido del sitio. Puedes escribir sobre:",
+    "contact.topicsli1":
+      "<b>Opinión sobre el sitio web:</b> Puedes comentar qué te ha parecido el diseño, la organización de la información o la claridad de los contenidos.",
+    "contact.topicsli2":
+      "<b>Dudas sobre la línea de tiempo:</b> Si alguna etapa de la historia de los computadores no te queda clara, puedes preguntar para obtener más información.",
+    "contact.topicsli3":
+      "<b>Comentarios sobre generaciones de computadores:</b> Comparte tu opinión sobre las distintas generaciones o menciona cuál te parece más importante en la evolución tecnológica.",
+    "contact.topicsli4":
+      "<b>Sugerencias de mejora:</b> Puedes proponer nuevas secciones, contenidos adicionales o ideas para mejorar este sitio web.",
     "contact.topicsHighlight":
       "Tu opinión es importante para seguir mejorando este proyecto educativo.",
     "contact.noteTitle": "Nota importante",
@@ -208,6 +214,18 @@ const translations = {
       "El envío mediante el formulario (usando mailto:) abre la aplicación de correo predeterminada del usuario.",
     "contact.noteText2":
       "También puedes volver a la línea de tiempo para repasar las etapas históricas.",
+    "contact.profileNotSelected": "No seleccionado",
+    "contact.none": "Ninguno",
+    "contact.phonePlaceholder": "Ejemplo: 612 345 678",
+    "timeline.demoShortDateLabel": "Fecha corta:",
+    "timeline.demoCurrencyLabel": "Precio histórico aproximado:",
+    "timeline.demoPercentLabel": "Crecimiento simbólico:",
+    "timeline.dynamicSummary":
+      "El Apple I fue presentado el {date}. Además, el Intel 4004, considerado uno de los primeros microprocesadores comerciales, apareció el {shortDate}. En esta página se muestra como referencia histórica un total de {number} transistores, un precio simbólico aproximado de {currency} y un crecimiento ilustrativo del {percent}, para mostrar cómo la internacionalización permite adaptar fechas, números, monedas y porcentajes según el idioma activo.",
+    "timeline.dynamicTitle": "Resumen dinámico",
+    "timeline.resourceTextStart":
+      "Para enviarme tu opinión sobre este, o algún otro tema, visita la página de",
+    "timeline.resourceLink": "contacto",
 
     "footer.author": "Autor: Julian Lechuga",
     "footer.rights":
@@ -277,18 +295,14 @@ const translations = {
     "timeline.pageTitle": "Timeline",
     "timeline.summaryTitle": "Historical summary",
     "timeline.intlTitle": "Featured historical data",
-    "timeline.intlIntro":
-      "La historia de los computadores puede entenderse mejor si observamos algunos datos concretos. En esta sección se muestran ejemplos de información histórica que cambian de formato según el idioma seleccionado, utilizando internacionalización con JavaScript.",
     "timeline.intlDateExplanation":
       "Una fecha importante dentro de la evolución de la informática personal es la presentación del Apple I, uno de los primeros computadores personales más representativos de la historia moderna.",
     "timeline.demoDateLabel": "Fecha destacada:",
-    "timeline.intlNumberExplanation":
-      "También es posible representar cantidades numéricas con distintos formatos regionales. El siguiente valor sirve como ejemplo de número histórico para comprobar cómo cambia su visualización según la configuración del idioma.",
     "timeline.demoNumberLabel": "Número histórico:",
     "timeline.intlHighlight":
-      "Gracias a la internacionalización, una misma información puede presentarse de forma más clara y natural para usuarios de distintos idiomas y regiones.",
+      "Thanks to internationalization, the same information can be presented more clearly and naturally for users of different languages and regions.",
     "timeline.dynamicIntro":
-      "A continuación se genera automáticamente un pequeño resumen histórico utilizando los datos anteriores. Este contenido cambia según el idioma activo y reutiliza información ya formateada para mostrar un ejemplo práctico de internacionalización dinámica.",
+      "A short historical summary is then automatically generated using the data above. This content changes depending on the active language and reuses already formatted information to show a practical example of dynamic internationalization.",
     "timeline.intlNumberExplanation":
       "Another key aspect in the evolution of computers is the increase in the number of electronic components. For example, early microprocessors like the Intel 4004 contained only a few thousand transistors, while modern systems include millions or even billions.",
     "timeline.intlNumberContext":
@@ -412,6 +426,14 @@ const translations = {
     "contact.topicsTitle": "Topics you can write about",
     "contact.topicsIntro":
       "This form is designed so that you can share your ideas, questions or suggestions about the site content. You can write about:",
+    "contact.topicsli1":
+      "<b>Opinion about the website:</b> You can comment on the design, organization of information, or clarity of the content.",
+    "contact.topicsli2":
+      "<b>Questions about the timeline:</b> If any stage of computer history is unclear, you can ask for more information.",
+    "contact.topicsli3":
+      "<b>Comments on computer generations:</b> Share your opinion about the different generations or mention which you think is most important.",
+    "contact.topicsli4":
+      "<b>Suggestions for improvement:</b> You can propose new sections, additional content, or ideas to improve this website.",
     "contact.topicsHighlight":
       "Your opinion is important to continue improving this educational project.",
     "contact.noteTitle": "Important note",
@@ -419,6 +441,26 @@ const translations = {
       "Sending the form using mailto: opens the user’s default email application.",
     "contact.noteText2":
       "You can also return to the timeline to review the historical stages.",
+    "contact.profileNotSelected": "Not Selected",
+    "contact.none": "None",
+    "contact.phonePlaceholder": "Example: (555) 123-4567",
+    "timeline.intlIntro":
+      "The history of computers can be better understood by looking at specific data. This section shows examples of historical information whose format changes depending on the selected language, using JavaScript internationalization.",
+    "timeline.intlDateExplanation":
+      "An important date in the evolution of personal computing is the presentation of the Apple I, one of the most representative early personal computers in modern history.",
+    "timeline.demoDateLabel": "Featured date:",
+    "timeline.demoShortDateLabel": "Short date:",
+    "timeline.demoNumberLabel": "Historical number:",
+    "timeline.demoCurrencyLabel": "Approximate historical price:",
+    "timeline.demoPercentLabel": "Symbolic growth:",
+    "timeline.intlNumberContext":
+      "The following value represents the approximate number of transistors in the Intel 4004, considered one of the first commercial microprocessors. Comparing it with current technology helps explain the enormous evolution of processing capacity.",
+    "timeline.dynamicSummary":
+      "The Apple I was presented on {date}. In addition, the Intel 4004, considered one of the first commercial microprocessors, appeared on {shortDate}. This page shows as historical references a total of {number} transistors, an approximate symbolic price of {currency}, and an illustrative growth of {percent}, showing how internationalization can adapt dates, numbers, currencies and percentages to the active language.",
+    "timeline.dynamicTitle": "Dynamic summary",
+    "timeline.resourceTextStart":
+      "To send me your opinion about this or any other topic, visit the",
+    "timeline.resourceLink": "contact page",
 
     "footer.author": "Author: Julian Lechuga",
     "footer.rights": "© 2026 - PMC Website about the history of computers",

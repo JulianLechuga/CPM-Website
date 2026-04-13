@@ -191,42 +191,55 @@ function checkValidityState(field) {
   }
 }
 
-function getCheckedValues() {
+function getCheckedValues(locale) {
   const valores = [];
   const hardware = document.getElementById("hardware");
   const software = document.getElementById("software");
   const historia = document.getElementById("historia");
 
   if (hardware && hardware.checked) {
-    valores.push("Hardware");
+    valores.push(translations[locale]?.["contact.hardware"] || "Hardware");
   }
+
   if (software && software.checked) {
-    valores.push("Software");
+    valores.push(translations[locale]?.["contact.software"] || "Software");
   }
+
   if (historia && historia.checked) {
-    valores.push("Historia");
+    valores.push(translations[locale]?.["contact.history"] || "Historia");
   }
 
   if (valores.length === 0) {
-    return "Ninguno";
+    return translations[locale]?.["contact.none"] || "Ninguno";
   }
 
   return valores.join(", ");
 }
 
-function getPerfilSeleccionado() {
+function getPerfilSeleccionado(locale) {
+  console.log(locale)
   const estudiante = document.getElementById("estudiante");
   const profesor = document.getElementById("profesor");
 
   if (estudiante && estudiante.checked) {
-    return "Estudiante";
+    return translations[locale]?.["contact.student"];
   }
 
   if (profesor && profesor.checked) {
-    return "Profesor";
+    return translations[locale]?.["contact.teacher"];
   }
 
-  return "No seleccionado";
+  return translations[locale]?.["contact.profileNotSelected"] || "No seleccionado";
+}
+
+function getSelectedOptionText(selectId) {
+  const select = document.getElementById(selectId);
+
+  if (!select || select.selectedIndex < 0) {
+    return "";
+  }
+
+  return select.options[select.selectedIndex].textContent;
 }
 
 /* ReqJ2 */
@@ -259,10 +272,10 @@ function updatePreview() {
       (telefono ? telefono.value : "") +
       "</p>" +
       "<p><strong>Profile:</strong> " +
-      getPerfilSeleccionado() +
+      getPerfilSeleccionado(savedLocale) +
       "</p>" +
       "<p><strong>How did you find the site?:</strong> " +
-      (comoConocio ? comoConocio.value : "") +
+      getSelectedOptionText("comoConocio") +
       "</p>" +
       "<p><strong>Selected number:</strong> " +
       (numero ? numero.value : "") +
@@ -271,7 +284,7 @@ function updatePreview() {
       (color ? color.value : "") +
       "</p>" +
       "<p><strong>Interests:</strong> " +
-      getCheckedValues() +
+      getCheckedValues(savedLocale) +
       "</p>" +
       "<p><strong>Favorite topic:</strong> " +
       (tema ? tema.value : "") +
@@ -291,10 +304,10 @@ function updatePreview() {
       (telefono ? telefono.value : "") +
       "</p>" +
       "<p><strong>Perfil:</strong> " +
-      getPerfilSeleccionado() +
+      getPerfilSeleccionado(savedLocale) +
       "</p>" +
       "<p><strong>Cómo conoció el sitio:</strong> " +
-      (comoConocio ? comoConocio.value : "") +
+      getSelectedOptionText("comoConocio") +
       "</p>" +
       "<p><strong>Número seleccionado:</strong> " +
       (numero ? numero.value : "") +
@@ -303,7 +316,7 @@ function updatePreview() {
       (color ? color.value : "") +
       "</p>" +
       "<p><strong>Intereses:</strong> " +
-      getCheckedValues() +
+      getCheckedValues(savedLocale) +
       "</p>" +
       "<p><strong>Tema favorito:</strong> " +
       (tema ? tema.value : "") +

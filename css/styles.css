@@ -322,9 +322,12 @@ button.highlight,
 /* ReqI18N9 */
 :lang(es) .language-box label {
     font-style: italic;
+    text-decoration: overline;
 }
 
+/* ReqI18N9 */
 :lang(en) .language-box label {
+    font-style: oblique;
     text-decoration: underline;
 }
 
@@ -334,7 +337,6 @@ button.highlight,
 }
 
 /* ReqI18N9 */
-:lang(en) blockquote,
 :lang(en) .destacado {
     word-spacing: 0.05em;
 }
