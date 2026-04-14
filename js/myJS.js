@@ -1,3 +1,7 @@
+const supabaseUrl = "https://fuhlakmwwlmthaxvfaed.supabase.co";
+const supabaseKey = "sb_publishable_jLCcnfXw17fnMnbb44k-bw_fiKBVyg4";
+const db = supabase.createClient(supabaseUrl, supabaseKey);
+
 /* ReqJ1 */
 function getForm() {
   return document.getElementById("formularioContacto");
@@ -217,7 +221,6 @@ function getCheckedValues(locale) {
 }
 
 function getPerfilSeleccionado(locale) {
-  console.log(locale)
   const estudiante = document.getElementById("estudiante");
   const profesor = document.getElementById("profesor");
 
@@ -229,7 +232,9 @@ function getPerfilSeleccionado(locale) {
     return translations[locale]?.["contact.teacher"];
   }
 
-  return translations[locale]?.["contact.profileNotSelected"] || "No seleccionado";
+  return (
+    translations[locale]?.["contact.profileNotSelected"] || "No seleccionado"
+  );
 }
 
 function getSelectedOptionText(selectId) {
@@ -371,8 +376,83 @@ function checkCustomRules() {
   return null;
 }
 
+async function sendSupabaseForm() {
+  const errorBox = document.getElementById("error-box");
+  const form = getForm();
+
+  if (!errorBox || !form) {
+    return;
+  }
+
+  try {
+    const name = document.getElementById("nombre")?.value.trim() || "";
+    const phone = document.getElementById("telefono")?.value.trim() || "";
+    const email = document.getElementById("correo")?.value.trim() || "";
+    const discovery = document.getElementById("comoConocio")?.value || null;
+    const interests = Array.from(
+      document.querySelectorAll('input[name="intereses"]:checked'),
+    )
+      .map((item) => item.value)
+      .join(", ");
+    const category =
+      document.getElementById("temaFavorito")?.value.trim() || "";
+    const message = document.getElementById("mensaje")?.value.trim() || "";
+
+    const birthdate = document.getElementById("fechaNacimiento")?.value || null;
+    const identifier =
+      document.getElementById("identificador")?.value.trim() || null;
+    const favoriteColor =
+      document.getElementById("colorFavorito")?.value || null;
+    const favoriteNumberValue =
+      document.getElementById("numeroFavorito")?.value;
+    const favoriteNumber = favoriteNumberValue
+      ? Number(favoriteNumberValue)
+      : null;
+
+    // No guardo la constraseña por mala practica nomás, sino tendría que implementar un hash, validarlo, etc. para no guardar la contraseña en texto plano, lo cual es un riesgo de seguridad importante.
+    const { error } = await db.from("contact_messages").insert([
+      {
+        name,
+        phone,
+        email,
+        discovery,
+        interests,
+        category,
+        message,
+        birthdate,
+        identifier,
+        favorite_color: favoriteColor,
+        favorite_number: favoriteNumber,
+      },
+    ]);
+
+    errorBox.classList.add("visible");
+
+    if (error) {
+      errorBox.style.color = "#8b0000";
+      errorBox.textContent = "Error al guardar el mensaje: " + error.message;
+      return;
+    }
+
+    errorBox.style.color = "green";
+    errorBox.textContent = "Mensaje enviado y guardado correctamente.";
+    form.reset();
+    ResetVisualState();
+  } catch (err) {
+    errorBox.classList.add("visible");
+    errorBox.style.color = "#8b0000";
+    errorBox.textContent =
+      "No se pudo conectar con Supabase. Inténtalo de nuevo.";
+    console.error(err);
+  }
+}
+
 /* ReqJ4 ReqJ5 ReqJ6 */
-function validateForm() {
+async function validateForm(event) {
+  if (event) {
+    event.preventDefault();
+  }
+
   const form = getForm();
   const identificador = document.getElementById("identificador");
   const linea = document.getElementById("lineaID");
@@ -412,7 +492,8 @@ function validateForm() {
     submitBtn.classList.remove("highlight");
   }
 
-  return true;
+  await sendSupabaseForm();
+  return false;
 }
 
 /* ReqJ7 */
