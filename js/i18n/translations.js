@@ -463,6 +463,6 @@ const translations = {
     "timeline.resourceLink": "contact page",
 
     "footer.author": "Author: Julian Lechuga",
-    "footer.rights": "© 2026 - PMC Website about the history of computers",
+    "footer.rights": "© 2026 - HCI Website about the history of computers",
   },
 };
